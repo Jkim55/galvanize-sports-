@@ -8,14 +8,14 @@ module.exports = {
         id: 15,
         name: "Tennis Racket",
         price: 50.00,
-        quantityAvailable: 5
+        quantityAvailable: 5 
     },{
         id: 18,
         name: "Running Shoes",
         price: 79.99,
         quantityAvailable: 7
     }],
-    
+
     shoppingCart: [{
         itemId: 10,
         quantity: 0
