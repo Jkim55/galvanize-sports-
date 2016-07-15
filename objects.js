@@ -15,6 +15,7 @@ module.exports = {
         price: 79.99,
         quantityAvailable: 7
     }],
+    
     shoppingCart: [{
         itemId: 10,
         quantity: 0
