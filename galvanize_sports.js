@@ -5,7 +5,7 @@ var shoppingCart = data.shoppingCart;
 module.exports = {
     inventory: data.inventory,
     shoppingCart: data.shoppingCart,
-    addItem: function(itemId, quantity){
+    addItem: function(itemId, quantity){      //******************* must connect SC.itemID to I.item
       for(var item in inventory){
         if (itemId === inventory[item].id){  // checking to find item
           if (quantity > inventory[item].quantityAvailable){  //check i quanitity to quantity requested
@@ -19,7 +19,7 @@ module.exports = {
       }
     },
 
-    removeItem: function(itemId, quantity){
+    removeItem: function(itemId, quantity){     //******************* must connect SC.itemID to I.item
       for(var item in shoppingCart){
         if (shoppingCart[item].itemId === itemId){  // checking to find item
           if (quantity > shoppingCart[item].quantity) {
@@ -33,10 +33,9 @@ module.exports = {
       }
     },
 
-    getCheckoutSubtotal: function(){
+    getCheckoutSubtotal: function(){    //******************* must connect SC.itemID to I.item
         var checkoutSubtotal = 0.00;
         for (var item in shoppingCart){
-
           // if (inventory[item].id === shoppingCart[item].itemID){
             checkoutSubtotal += inventory[item].price * shoppingCart[item].quantity
           // }
