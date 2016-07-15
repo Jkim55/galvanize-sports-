@@ -2,6 +2,9 @@ var data = require("./objects");
 var inventory = data.inventory;
 var shoppingCart = data.shoppingCart;
 
+
+// incorporate this
+
 module.exports = {
     inventory: data.inventory,
     shoppingCart: data.shoppingCart,
@@ -36,22 +39,26 @@ module.exports = {
     getCheckoutSubtotal: function(){    //******************* must connect SC.itemID to I.item
         var checkoutSubtotal = 0.00;
         for (var item in shoppingCart){
+          // eval(require('locus'));
           // if (inventory[item].id === shoppingCart[item].itemID){
             checkoutSubtotal += inventory[item].price * shoppingCart[item].quantity
           // }
         }
-        return checkoutSubtotal.toFixed(2);
+        return checkoutSubtotal;
     },
 
     getTax: function(subtotal, rate){
         var tax = 0.00;
-        // Your code here!
-        return tax;
+        tax += subtotal * rate
+        return tax
     },
+
     getCheckoutTotal: function(){
         var TAX_RATE = 0.078;
         var checkoutTotal = 0.00;
-        // Your code here!
-        return checkoutTotal;
+        var subtotal = this.getCheckoutSubtotal()
+        var tax = this.getTax(subtotal, TAX_RATE)
+        checkoutTotal += subtotal + tax
+        return checkoutTotal.toFixed(2);
     }
 }

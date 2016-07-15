@@ -65,13 +65,13 @@ describe("Functions should work", function() {
     });
   });
   describe("#getTax", function () {
-    xit("should calculate tax", function(){
+    it("should calculate tax", function(){
       initializeData();
       assert.equal(galvanizeSports.getTax(300, 0.078), 23.40, "Calculates correct tax");
     });
   });
   describe("#getCheckoutTotal", function () {
-    xit("should have a working getCheckoutTotal function", function(){
+    it("should have a working getCheckoutTotal function", function(){
       initializeData();
       assert.equal(galvanizeSports.getCheckoutTotal(), 323.36, "Calculates correct total");
     });
@@ -79,7 +79,7 @@ describe("Functions should work", function() {
 });
 
 describe("User workflow should work", function() {
-  xit("should allow the user to add and remove some items, then display the correct total", function(){
+  it("should allow the user to add and remove some items, then display the correct total", function(){
       initializeData();
       galvanizeSports.addItem(10, 2);
       galvanizeSports.addItem(15, 2);
