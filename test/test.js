@@ -1,4 +1,4 @@
-var galvanizeSports = require("../galvanize_sports");
+var galvanizeSports = require("../galvanize_sports_better");
 var assert = require("chai").assert;
 
 function initializeData(){
@@ -58,6 +58,7 @@ describe("Functions should work", function() {
       assert.equal(galvanizeSports.inventory[0].quantityAvailable, 5, "All available item 1's should be added to the available inventory")
     })
   });
+
   describe("#getCheckoutSubtotal", function () {
     it("Calculates the subtotal", function(){
       initializeData();
