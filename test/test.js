@@ -1,4 +1,4 @@
-var galvanizeSports = require("../galvanize_sports_better");
+var galvanizeSports = require("../galvanize_sports");
 var assert = require("chai").assert;
 
 function initializeData(){
